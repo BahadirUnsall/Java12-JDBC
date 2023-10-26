@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="736b6454-a440-446e-9444-56bd81ca51d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/controller/PersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/entity/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/repository/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/service/PersonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/util/JdbcHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/util/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/util/constant/JdbcConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdbcExample001/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jdbcExample001/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdbcExample002/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jdbcExample002/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbcExample002/src/main/java/org/bahadir/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2XJhSs7Gq9vFnfHv9hpkEuSMTRw" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/840G2/Desktop/java12_jdbc/jdbcExample002"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="736b6454-a440-446e-9444-56bd81ca51d3" name="Changes" comment="" />
+      <created>1698353093328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698353093328</updated>
+    </task>
+    <servers />
+  </component>
+</project>
