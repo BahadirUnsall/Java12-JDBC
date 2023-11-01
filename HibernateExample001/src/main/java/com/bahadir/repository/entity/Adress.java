@@ -1,6 +1,5 @@
 package com.bahadir.repository.entity;
 
-import com.bahadir.enums.EAdressType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

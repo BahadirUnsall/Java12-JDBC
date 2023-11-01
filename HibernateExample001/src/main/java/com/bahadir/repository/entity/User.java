@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,4 +39,5 @@ public class User {
     @ElementCollection
     @Embedded
     private Map<EAdressType,Adress> adresses;
+
 }
