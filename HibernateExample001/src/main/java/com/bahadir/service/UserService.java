@@ -3,6 +3,7 @@ package com.bahadir.service;
 import com.bahadir.enums.EAdressType;
 import com.bahadir.repository.entity.Adress;
 import com.bahadir.repository.entity.Information;
+import com.bahadir.repository.entity.Post;
 import com.bahadir.repository.entity.User;
 import com.bahadir.util.HibernateUtility;
 import org.hibernate.Hibernate;
@@ -11,6 +12,7 @@ import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,7 +24,13 @@ public class UserService {
     Session session;
     Transaction transaction;
 
+    CriteriaBuilder criteriaBuilder;
 
+    public UserService(){
+        session = HibernateUtility.getSessionFactory().openSession();
+        transaction = session.beginTransaction();
+        criteriaBuilder = session.getCriteriaBuilder();
+    }
 
     private void openSession() {
         session = HibernateUtility.getSessionFactory().openSession();
@@ -197,6 +205,23 @@ public class UserService {
         List<User> resultList = session.createQuery(query).getResultList();
 
         return resultList;
+    }
+    public List<User> findByUserStartWithH(){
+        CriteriaQuery<User> query = criteriaBuilder.createQuery(User.class);
+        Root<User> root = query.from(User.class);
+        query.select(root).where(criteriaBuilder.like(root.get("information").get("name"), "h%"));
+        List<User> resultList = session.createQuery(query).getResultList();
+        return resultList;
+    }
+    public List<User> metod7(){
+        String hql = "SELECT u FROM User u INNER JOIN "
+//        List<User> startWithH = findByUserStartWithH();
+//        CriteriaQuery<User> query = criteriaBuilder.createQuery(User.class);
+//        Root<User> root = query.from(User.class);
+//        Predicate p1 = criteriaBuilder.like(root.get("information").get("name"), "h%");
+//        Predicate p2 = criteriaBuilder.count(root.get("id"))
+//        Predicate sonKosul = criteriaBuilder.and(p1,p2);// ad LIKE '%?' AND  fiyat>?
+
     }
 
 

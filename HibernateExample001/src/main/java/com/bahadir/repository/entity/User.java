@@ -37,7 +37,6 @@ public class User {
     private List<String> interest;
 
     @ElementCollection
-    @Embedded
     private Map<EAdressType,Adress> adresses;
 
 }
