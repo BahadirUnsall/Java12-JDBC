@@ -29,7 +29,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<ProductDetail> productDetailList;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Customer> customerList;
 
 }

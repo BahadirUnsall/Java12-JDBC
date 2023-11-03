@@ -5,6 +5,8 @@ import com.bahadir.repository.entity.Information;
 import com.bahadir.service.CustomerService;
 import com.bahadir.util.BAUtils;
 
+import java.util.Optional;
+
 public class CustomerController {
     private CustomerService customerService;
 
@@ -33,5 +35,13 @@ public class CustomerController {
                 .build();
 
         customerService.register(customer);
+    }
+
+    public Optional<Customer> login() {
+        String identity = BAUtils.readString("tcnizi girin");
+        String password = BAUtils.readString("şifrenizi girin");
+
+       return customerService.findCustomerByIdentity(identity,password);
+
     }
 }

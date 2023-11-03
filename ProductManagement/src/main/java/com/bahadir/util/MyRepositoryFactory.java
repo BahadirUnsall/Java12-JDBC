@@ -1,5 +1,6 @@
 package com.bahadir.util;
 
+import lombok.Getter;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -9,7 +10,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+@Getter
 public class MyRepositoryFactory<T,ID> implements ICrud<T,ID>{
     private Session session;
     private Transaction transaction;
@@ -22,12 +23,13 @@ public class MyRepositoryFactory<T,ID> implements ICrud<T,ID>{
         this.clazz = clazz;
     }
 
-    private void openSession() {
+    protected void openSession() {
         session = HibernateUtility.getSessionFactory().openSession();
         transaction = session.beginTransaction();
+        criteriaBuilder = session.getCriteriaBuilder();
     }
 
-    private void closeSession() {
+    protected void closeSession() {
         transaction.commit();
         session.close();
     }
