@@ -8,6 +8,7 @@ import com.bahadir.service.CategoryService;
 import com.bahadir.service.ProductService;
 import com.bahadir.util.BAUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ProductController {
@@ -47,5 +48,11 @@ public class ProductController {
 
         productService.update(product.get());
 
+    }
+
+    public void listProductsWhereStockLessThanTen() {
+        List<Product> products = productService.listProductsWhereStockLessThanTen();
+        System.out.println("Stogu 10'dan az olan urunler ");
+        products.forEach(System.out::println);
     }
 }

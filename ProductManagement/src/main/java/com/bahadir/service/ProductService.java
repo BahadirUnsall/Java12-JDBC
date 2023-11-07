@@ -3,6 +3,7 @@ package com.bahadir.service;
 import com.bahadir.repository.ProductRepository;
 import com.bahadir.repository.entity.Product;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ProductService {
@@ -34,5 +35,15 @@ public class ProductService {
 
     public void update(Product product) {
         productRepository.update(product);
+    }
+
+    public Product findById(int id) {
+        Optional<Product> product = productRepository.findById((long) id);
+        return product.get();
+    }
+
+    public List<Product> listProductsWhereStockLessThanTen() {
+        List<Product> products = productRepository.listProductsWhereStockLessThanTen();
+        return products;
     }
 }

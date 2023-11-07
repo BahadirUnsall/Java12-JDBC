@@ -3,20 +3,24 @@ package com.bahadir.app;
 import com.bahadir.controller.CategoryController;
 import com.bahadir.controller.CustomerController;
 import com.bahadir.controller.ProductController;
+import com.bahadir.controller.ProductDetailController;
 import com.bahadir.repository.entity.Customer;
 import com.bahadir.util.BAUtils;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class Menu {
     private final CustomerController customerController;
     private final CategoryController categoryController;
     private final ProductController productController;
+    private final ProductDetailController productDetailController;
 
     public Menu() {
         this.customerController = new CustomerController();
         this.categoryController = new CategoryController();
         this.productController = new ProductController();
+        this.productDetailController = new ProductDetailController();
     }
 
     public void menu(){
@@ -49,7 +53,10 @@ public class Menu {
                 customerController.register();
                 break;
             case 2:
-                customerController.login();
+                Optional<Customer> login = customerController.login();
+                if (login.isPresent()){
+                    customerManagerMenu(login.get());
+                }
                 break;
         }
     }
@@ -57,6 +64,9 @@ public class Menu {
     private void customerManagerMenu(Customer customer) {
         HashMap<Integer,String> menuItems = new HashMap<>();
         menuItems.put(1,"Satın Al");
+        menuItems.put(2,"Urune Yorum yap ve puan ver");
+        menuItems.put(3,"Stogu bitmek üzere olan urunleri listele(10 ve adet ve asagısı)");
+        menuItems.put(4,"Urune gore yorumları goster");
 
 
         int key = BAUtils.menu(menuItems);
@@ -66,7 +76,10 @@ public class Menu {
                 productController.buyProduct(customer);
                 break;
             case 2:
-                System.out.println("Giriş yap");
+                productDetailController.commentAndRateTheProduct();
+                break;
+            case 3:
+                productController.listProductsWhereStockLessThanTen();
                 break;
         }
     }
@@ -86,6 +99,7 @@ public class Menu {
             case 2:
                 categoryController.save();
                 break;
+
         }
     }
 }

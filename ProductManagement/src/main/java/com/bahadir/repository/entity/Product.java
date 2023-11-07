@@ -32,4 +32,13 @@ public class Product {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Customer> customerList;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                '}';
+    }
 }
