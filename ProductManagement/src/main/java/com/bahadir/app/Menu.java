@@ -66,7 +66,7 @@ public class Menu {
         menuItems.put(1,"Satın Al");
         menuItems.put(2,"Urune Yorum yap ve puan ver");
         menuItems.put(3,"Stogu bitmek üzere olan urunleri listele(10 ve adet ve asagısı)");
-        menuItems.put(4,"Urune gore yorumları goster");
+        menuItems.put(4,"Uyeligi yukselt");
 
 
         int key = BAUtils.menu(menuItems);
@@ -80,6 +80,9 @@ public class Menu {
                 break;
             case 3:
                 productController.listProductsWhereStockLessThanTen();
+                break;
+            case 4:
+                customerController.upgradeAccount(customer);
                 break;
         }
     }

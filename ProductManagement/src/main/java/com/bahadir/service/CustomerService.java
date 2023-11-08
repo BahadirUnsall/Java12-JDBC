@@ -2,6 +2,7 @@ package com.bahadir.service;
 
 import com.bahadir.repository.CustomerRepository;
 import com.bahadir.repository.entity.Customer;
+import com.bahadir.repository.entity.enums.EAccountType;
 
 import java.util.Optional;
 
@@ -29,6 +30,12 @@ public class CustomerService {
             System.out.println("Customer Not Found");
         }
         return Optional.empty();
+    }
+
+    public void upgradeAccount(Customer customer,String value) {
+        value.toUpperCase();
+        customer.setEAccountType(EAccountType.valueOf(value));
+        customerRepository.update(customer);
     }
 }
 

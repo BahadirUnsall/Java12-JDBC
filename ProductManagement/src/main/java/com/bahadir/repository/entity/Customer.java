@@ -1,5 +1,6 @@
 package com.bahadir.repository.entity;
 
+import com.bahadir.repository.entity.enums.EAccountType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,4 +29,8 @@ public class Customer {
 
     @ManyToMany(mappedBy = "customerList")
     private List<Product> productList;
+
+    @Enumerated
+            @Builder.Default
+    EAccountType eAccountType = EAccountType.NORMAL;
 }

@@ -44,4 +44,12 @@ public class CustomerController {
        return customerService.findCustomerByIdentity(identity,password);
 
     }
+
+    public void upgradeAccount(Customer customer) {
+        System.out.println("1-GOLD");
+        System.out.println("2-PLATINUM");
+        String value = BAUtils.readString("Hangi uyelige geciceksiniz ?");
+        customerService.upgradeAccount(customer,value);
+
+    }
 }
